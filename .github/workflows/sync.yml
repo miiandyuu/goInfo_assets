@@ -32,6 +32,4 @@ jobs:
 
       - name: Push Changes
         run: |
-          git config user.name "miiandyuu"
-          git config user.email "raston3232@gmail.com"
           git push origin master
