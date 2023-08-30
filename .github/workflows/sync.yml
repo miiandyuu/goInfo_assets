@@ -1,5 +1,8 @@
 name: Sync with Upstream
 
+env:
+  UPSTREAM_REPO_URL: https://github.com/PokeMiners/pogo_assets.git
+
 on:
   push:
     branches:
@@ -13,6 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Add Upstream Remote
+        run: git remote add upstream ${{env.UPSTREAM_REPO_URL}}
+        
       - name: Fetch Upstream
         run: git fetch upstream
 
